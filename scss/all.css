@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -52,12 +53,84 @@ table {
   border-spacing: 0;
 }
 
-.warp {
-  margin: 0 auto;
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 50px auto;
 }
 
 .header {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 50px;
+  font-family: "Roboto", serif;
+}
+.header .title-group {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #333;
+}
+.header .title-group h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-right: 50px;
+  text-align: center;
+}
+.header .total-price-group {
+  display: flex;
+  align-items: center;
+}
+.header .total-price-group .total {
+  margin-right: 30px;
+}
+.header .total-price-group .total-price {
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+}
+.header .total-price-group .total-price::before {
+  content: "$";
+  position: absolute;
+  top: 0;
+  font-size: 8px;
+  left: -10px;
+}
+
+@media (max-width: 756px) {
+  .wrap {
+    margin: 10px auto;
+  }
+
+  .header {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+  .header .title-group {
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+  .header .title-group h1 {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+.container {
+  max-width: 100%;
+  font-family: "Roboto", serif;
+  margin-top: 20px;
+}
+.container .shopcart-item {
+  display: flex;
+}
+.container .shopcart-item .price::before {
+  content: "$";
+  position: absolute;
+  top: 0;
+  font-size: 8px;
+  left: -10px;
 }/*# sourceMappingURL=all.css.map */
